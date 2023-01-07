@@ -10,7 +10,7 @@ provider "aws" {
 
 provider "elasticsearch" {
   url         = "https://${module.opensearch.fqdn}"
-  aws_region  = var.aws_region
+  aws_region  = var.region
   healthcheck = false
 }
 
