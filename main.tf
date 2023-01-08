@@ -98,9 +98,6 @@ data "http" "saml_metadata" {
   count = var.create_opensearch && var.enable_saml ? 1 : 0
 
   url = "https://portal.sso.${var.region}.amazonaws.com/saml/metadata/${var.sso_entity_id}"
-  request_headers = {
-    Accept = "application/json"
-  }
 }
 
 resource "aws_opensearch_domain_saml_options" "this" {
